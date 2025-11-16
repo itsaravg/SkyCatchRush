@@ -1,0 +1,107 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #283c86, #45a247);
+  color: white;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;      
+  justify-content: center; 
+  height: 100vh;           
+  overflow: hidden;
+}
+
+
+h1 {
+  margin-top: 10px;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+
+#hearts img {
+  width: 30px;
+  margin: 5px;
+}
+
+#game-container {
+  position: relative;
+  width: 800px;   
+  height: 500px;   
+  background: url('bg.png') center/cover no-repeat;
+  overflow: hidden;
+  margin: 20px auto;
+  border: 3px solid white;   
+  border-radius: 15px;
+}
+
+#basket {
+  position: absolute;
+  bottom: 20px;
+  left: 50%; 
+  width: 80px; 
+  transition: left 0.05s linear; 
+}
+
+
+.object {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+}
+
+#game-over {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255,255,255,0.9);
+  color: #283c86;
+  padding: 30px 50px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.hidden {
+  display: none;
+}
+
+#restart-btn {
+  background: #45a247;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+
+#restart-btn:hover {
+  background: #3b8d3b;
+}
+
+/* Sparkle animation */
+.sparkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: sparkleAnim 0.7s forwards;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes sparkleAnim {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  50% { transform: translateY(-20px) scale(1.5); opacity: 1; }
+  100% { transform: translateY(-40px) scale(0); opacity: 0; }
+}
